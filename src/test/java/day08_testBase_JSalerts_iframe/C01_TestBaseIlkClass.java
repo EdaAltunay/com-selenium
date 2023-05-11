@@ -9,6 +9,9 @@ import utilities.TestBase;
 
 public class C01_TestBaseIlkClass extends TestBase {
 
+    // amazon'a gidelim
+    // Nutella icin arama yapalim
+    // arama sonuclarinin Nutella icerdigini test edelim
 
 
     @Test

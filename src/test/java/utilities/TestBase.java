@@ -12,7 +12,7 @@ public class TestBase {
     /*
         TestBase class'ini
         bu class'i parent edinecek class'larda
-        driver olusturmamak ve ayarlari yeniden yapmamak icin kullaniyoruz
+        driver olusturmamak ve ayarlari yeniden yapmamak icin kullaniyoruz.
      */
 
     protected WebDriver driver;

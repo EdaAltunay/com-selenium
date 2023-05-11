@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 
 public class C04_DropdownMenu {
+
     //● https://www.amazon.com/ adresine gidin.
     //- Test 1
     //	Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45 oldugunu test edin

@@ -33,6 +33,7 @@ public class C01_BeforeAfterClass {
 
     @AfterClass
     public static void teardown(){
+
         driver.close();
     }
 
