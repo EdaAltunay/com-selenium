@@ -46,7 +46,7 @@ public class C02_JSAlerts extends TestBaseBeforeClass {
     @Test
     public void test01() throws InterruptedException {
         // 1. Test
-        //            -  https://the-internet.herokuapp.com/javascript_alerts adresine gidin
+        // https://the-internet.herokuapp.com/javascript_alerts      adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         //            - 1.alert'e tiklayin
         Thread.sleep(3000);
@@ -81,7 +81,7 @@ public class C02_JSAlerts extends TestBaseBeforeClass {
     @Test
     public void test03() throws InterruptedException {
         //  3.Test
-        //            - https://the-internet.herokuapp.com/javascript_alerts adresine gidin
+        //  https://the-internet.herokuapp.com/javascript_alerts adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         Thread.sleep(3000);
         //            - 3.alert'e tiklayalim
@@ -90,7 +90,7 @@ public class C02_JSAlerts extends TestBaseBeforeClass {
         //            - Cikan prompt ekranina "Abdullah" yazdiralim
         driver.switchTo().alert().sendKeys("Abdullah");
         Thread.sleep(3000);
-        //            - OK tusuna basarak alert'i kapatalim
+        //            - OK tusuna basarak alert'i kapatalim.*****************************
         driver.switchTo().alert().accept();
         //            - Cikan sonuc yazisinin Abdullah icerdigini test edelim
         Thread.sleep(3000);

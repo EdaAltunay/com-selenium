@@ -23,23 +23,38 @@ public class C04_IFrame extends TestBase {
         //    ve  konsolda yazdirin.
         WebElement iFrameyaziElementi= driver.findElement(By.tagName("h3"));
         Assert.assertTrue(iFrameyaziElementi.isDisplayed());
+
         System.out.println(iFrameyaziElementi.getText());
+
         //  - Text Box’a “Merhaba Dunya!” yazin.
+
+        //////////   frame'de olan texbox elementine gecis yapabilmek icin önce frame 'e gecmek gerekir. ***********
         WebElement frameElementi= driver.findElement(By.id("mce_0_ifr"));
         driver.switchTo().frame(frameElementi);
+        /////////    frame 'e gecis yaptim. *************
+
+
         WebElement textBoxElementi= driver.findElement(By.xpath("//body[@id='tinymce']"));
         Thread.sleep(1000);
-        textBoxElementi.clear();
+        textBoxElementi.clear();      // texbox daki yaziyi temizledim.
+
+
         textBoxElementi.sendKeys("Merhaba Dunya!");
+
+
         //  - TextBox’in altinda bulunan “Elemental Selenium”
         //    linkini textinin gorunur oldugunu dogrulayin ve  konsolda yazdirin.
+
         /*
             iframe'e gecis yapilinca
             driver'i oradan cikis yaptirana kadar driver iframe'in icinde kalir
             driver.switchTo().parentFrame() : ic ice birden fazla iframe varsa, bir uste cikar
             driver.switchTo().defaultContent() : direk anasayfaya cikar
          */
-        driver.switchTo().defaultContent();
+        driver.switchTo().defaultContent();    //  frame'den cikis yaptim.
+
+
+
         WebElement elementalSeleniumLinki= driver.findElement(By.linkText("Elemental Selenium"));
         Assert.assertTrue(elementalSeleniumLinki.isDisplayed());
         System.out.println(elementalSeleniumLinki.getText());
