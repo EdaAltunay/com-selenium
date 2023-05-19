@@ -14,14 +14,13 @@ public class C01_KlavyeActions extends TestBase {
     public void test01() throws InterruptedException {
         //2- https://www.amazon.com sayfasina gidelim
         driver.get("https://www.amazon.com");
-        //3- Arama kutusuna actions method’larini kullanarak Samsung A71 yazdirin
-        //   ve Enter’a basarak arama yaptirin
+        //3- Arama kutusuna actions method’larini kullanarak Samsung A71 yazdirin ve Enter’a basarak arama yaptirin
         Actions actions = new Actions(driver);
-        WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
+        WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         actions.click(aramaKutusu)
-                .keyDown(Keys.SHIFT)
-                .sendKeys("s")
-                .keyUp(Keys.SHIFT)
+                .keyDown(Keys.SHIFT)  //  klavyede tusa basar.
+                .sendKeys("s")        // ogeye bir dizi anahtar yollar.
+                .keyUp(Keys.SHIFT)    // klavyede tusu serbest birakir.
                 .sendKeys("amsung ")
                 .keyDown(Keys.SHIFT)
                 .sendKeys("a")
@@ -29,8 +28,11 @@ public class C01_KlavyeActions extends TestBase {
                 .sendKeys("71")
                 .sendKeys(Keys.ENTER)
                 .perform();
+
         Thread.sleep(5000);
+
         //4- aramanin gerceklestigini test edin
+
         WebElement sonucYaziElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
         String expectedIcerik = "Samsung A71";
         String actualSonucYazisi= sonucYaziElementi.getText();
