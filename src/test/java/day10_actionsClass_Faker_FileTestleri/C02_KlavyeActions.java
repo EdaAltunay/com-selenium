@@ -20,8 +20,10 @@ public class C02_KlavyeActions extends TestBase {
         //1- https://www.facebook.com adresine gidelim ve cookies'i kabul edelim
         driver.get("https://www.facebook.com");
        // driver.findElement(By.xpath("//button[@*='_42ft _4jy0 _al65 _4jy3 _4jy1 selected _51sy']")).click();    bende cookies yok.
+
         //2- Yeni hesap olustur butonuna basalim
         driver.findElement(By.xpath("//a[@* = '_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")).click();
+
         //3- Ad, soyad, mail ve sifre kutularina deger yazalim ve kaydol tusuna basalim
         Actions actions = new Actions(driver);
         WebElement isimKutusu = driver.findElement(By.xpath("//*[@name='firstname']"));

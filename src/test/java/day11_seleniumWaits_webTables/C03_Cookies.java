@@ -26,6 +26,7 @@ public class C03_Cookies extends TestBase {
     public void test01(){
         //1- Amazon anasayfaya gidin
         driver.get("https://www.amazon.com");
+
         //2- tum cookie’leri listeleyin
         Set<Cookie> cookiesSet = driver.manage().getCookies();
 

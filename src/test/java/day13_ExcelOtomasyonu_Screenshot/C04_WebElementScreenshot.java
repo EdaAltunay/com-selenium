@@ -18,10 +18,9 @@ public class C04_WebElementScreenshot extends TestBase {
         // Nutella aratalim
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
+
         // Sonuclarin Nutella icerdigini test edelim
-
         WebElement sonucElementi = driver.findElement(By.xpath("(//div[@class='sg-col-inner'])[1]"));
-
         String actualSonucYazisi= sonucElementi.getText();
         String expectedIcerik = "Nutella";
         Assert.assertTrue(actualSonucYazisi.contains(expectedIcerik));

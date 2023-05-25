@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class C02_CheckBox {
+
     //Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
     //	a. Verilen web sayfasına gidin.
     //	     https://the-internet.herokuapp.com/checkboxes
@@ -33,6 +34,7 @@ public class C02_CheckBox {
 
     @After
     public void teardown(){
+
         driver.close();
     }
 
@@ -46,6 +48,7 @@ public class C02_CheckBox {
         WebElement checkBox2= driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
 
         Thread.sleep(3000);
+
         //	c. Checkbox1 seçili değilse onay kutusunu tıklayın
         if (!checkBox1.isSelected()){
             checkBox1.click();

@@ -18,9 +18,9 @@ public class C04_IFrame extends TestBase {
     @Test
     public void test01() throws InterruptedException {
         // 1 ) https://the-internet.herokuapp.com/iframe adresine gidin
-        driver.get("https://the-internet.herokuapp.com/iframe");
-        //  - “An IFrame containing….” textinin erisilebilir oldugunu test edin
-        //    ve  konsolda yazdirin.
+        driver.get("https://the-intekrnet.herokuapp.com/iframe");
+
+        //  - “An IFrame containing….” textinin erisilebilir oldugunu test edin ve  konsolda yazdirin.
         WebElement iFrameyaziElementi= driver.findElement(By.tagName("h3"));
         Assert.assertTrue(iFrameyaziElementi.isDisplayed());
 

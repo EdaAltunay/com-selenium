@@ -25,20 +25,24 @@ public class C01_WebTables extends TestBase {
     public void test01() throws InterruptedException {
         //1."https://www.amazon.com" adresine gidin
         driver.get("https://www.amazon.com");
+
         //2.Sayfanin en altina inin
         Actions actions= new Actions(driver);
         actions.sendKeys(Keys.END).perform();
+
         //3.Web table tum body’sini yazdirin
         Thread.sleep(2000);
         WebElement tumBodyElementi= driver.findElement(By.tagName("tbody"));
         System.out.println(tumBodyElementi.getText());
         // tum Body'yi tek element olarak locate etmek
         // body icinde gecen bir metnin varligini test etmek gibi gorevler icin kullanilabilir
+
         //4.Web table’daki satir sayisinin 9 oldugunu test edin
         List<WebElement> satirElementleriList = driver.findElements(By.xpath("//tbody/tr"));
         int expectedSatirSayisi=9;
         int actualSatirsayisi= satirElementleriList.size();
         Assert.assertEquals(expectedSatirSayisi,actualSatirsayisi);
+
         //5.Tum satirlari yazdirin
         System.out.println("============================");
         for (WebElement eachSatir:satirElementleriList
@@ -46,6 +50,7 @@ public class C01_WebTables extends TestBase {
             System.out.println(eachSatir.getText());
             System.out.println("============================");
         }
+
         //6. Web table’daki sutun sayisinin 13 olduğunu test edin
         List<WebElement> birinciSatirDatalari=driver.findElements(By.xpath("//tbody/tr[1]/td"));
         int expectedSutunSayisi=13;

@@ -15,12 +15,13 @@ public class C03_ActionsClass extends TestBase {
     public void test01() throws InterruptedException {
         //2- https://the-internet.herokuapp.com/context_menu sitesine gidin
         driver.get("https://the-internet.herokuapp.com/context_menu");
+
+
         //3- Cizili alan uzerinde sag click yapin
-
-
-        WebElement ciziliAlan = driver.findElement(By.id("hot-spot"));
         Actions actions = new Actions(driver);
+        WebElement ciziliAlan = driver.findElement(By.id("hot-spot"));
         actions.contextClick(ciziliAlan).perform();
+
         //4- Alert’te cikan yazinin “You selected a context menu” oldugunu test edin.
         String expectedAlertYazisi = "You selected a context menu";
         String actualAlertYazisi = driver.switchTo().alert().getText();

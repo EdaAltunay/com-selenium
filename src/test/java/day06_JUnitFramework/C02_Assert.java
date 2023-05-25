@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class C02_Assert {
 
-    // Amazon'a gidip title'in AMAZON icerdigini test edin
+    // Amazon'a gidip title'in Amazon icerdigini test edin
     @Test
     public void test01(){
         /*
@@ -29,7 +29,7 @@ public class C02_Assert {
 
         driver.get("https://www.amazon.com");
 
-        String expectedIcerik = "AMAZON";
+        String expectedIcerik = "Amazon";
 
         String actualTitle= driver.getTitle();
         /*

@@ -32,13 +32,17 @@ public class C03_TumSayfaScreenshot extends TestBase {
         // rapora eklenmek uzere, tum sayfanin ekran goruntusunu alalim
 
         TakesScreenshot tss = (TakesScreenshot) driver;
+        // bir TakeScreenhot objesi olusturup driver'imizi cast edelim.
 
         File tumSayfaResim = new File("target/ekranResimleri/tumSayfaResim.png");
+        // kaydettigimiz ekran goruntusunu projede istedigimiz yere kaydetmek icin path ile yeni bir file olusturalim
 
         File geciciResim = tss.getScreenshotAs(OutputType.FILE);
+        // tss onjesini kullanarak getScreenshotAs() methodunu calistiralim ve gelen resmi gecici bir file a assign edelim.
 
         FileUtils.copyFile(geciciResim,tumSayfaResim);
+        // kaydettigimiz goruntuyu saklamak istedigimiz file'e kopyalayalim
 
-        ReusableMethods.tumSayfaFotografCek(driver);
+       // ReusableMethods.tumSayfaFotografCek(driver);
     }
 }

@@ -20,21 +20,24 @@ public class C01_NewWindow extends TestBase {
         // amazon anasayfaya gidin
         driver.get("https://www.amazon.com");
         String ilkSayfaWHD= driver.getWindowHandle();
+
         // title'in Amazon kelimesi icerdigini test edin
         String expectedIcerik = "Amazon";
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
+
         // yeni bir tab acarak wisequarter anasayfaya gidin
         driver.switchTo().newWindow(WindowType.TAB);
         Thread.sleep(1000);
         driver.get("https://www.wisequarter.com");
         String ikinciSayfaWHD= driver.getWindowHandle();
+
         // url'in wisequarter icerdigini test edin
         expectedIcerik = "wisequarter";
         String actualUrl= driver.getCurrentUrl();
         Assert.assertTrue(actualUrl.contains(expectedIcerik));
-        // tekrar amazon'un acik oldugu sayfaya gecin
-        // ve url'in amazon icerdigini test edin
+
+        // tekrar amazon'un acik oldugu sayfaya gecin ve url'in amazon icerdigini test edin
         driver.switchTo().window(ilkSayfaWHD);
         expectedIcerik = "amazon";
         actualUrl= driver.getCurrentUrl();

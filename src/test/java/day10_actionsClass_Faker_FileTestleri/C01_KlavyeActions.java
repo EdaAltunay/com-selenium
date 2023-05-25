@@ -14,6 +14,7 @@ public class C01_KlavyeActions extends TestBase {
     public void test01() throws InterruptedException {
         //2- https://www.amazon.com sayfasina gidelim
         driver.get("https://www.amazon.com");
+
         //3- Arama kutusuna actions method’larini kullanarak Samsung A71 yazdirin ve Enter’a basarak arama yaptirin
         Actions actions = new Actions(driver);
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
@@ -30,6 +31,7 @@ public class C01_KlavyeActions extends TestBase {
                 .perform();
 
         Thread.sleep(5000);
+
 
         //4- aramanin gerceklestigini test edin
 

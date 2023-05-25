@@ -48,9 +48,11 @@ public class C02_JSAlerts extends TestBaseBeforeClass {
         // 1. Test
         // https://the-internet.herokuapp.com/javascript_alerts      adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+
         //            - 1.alert'e tiklayin
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[text()='Click for JS Alert']")).click();
+
         //            -  Alert'deki yazinin "I am a JS Alert" oldugunu test edin
         Thread.sleep(3000);
         String expectedAlertYazisi = "I am a JS Alert";
@@ -65,9 +67,11 @@ public class C02_JSAlerts extends TestBaseBeforeClass {
         //2.Test
         //            - https://the-internet.herokuapp.com/javascript_alerts adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+
         //            - 2.alert'e tiklayalim
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[text()='Click for JS Confirm']")).click();
+
         //            - Cancel'a basip, cikan sonuc yazisinin "You clicked: Cancel" oldugunu test edin
         Thread.sleep(3000);
         driver.switchTo().alert().dismiss();
@@ -84,18 +88,20 @@ public class C02_JSAlerts extends TestBaseBeforeClass {
         //  https://the-internet.herokuapp.com/javascript_alerts adresine gidin
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         Thread.sleep(3000);
+
         //            - 3.alert'e tiklayalim
         driver.findElement(By.xpath("//*[text()='Click for JS Prompt']")).click();
         Thread.sleep(3000);
+
         //            - Cikan prompt ekranina "Abdullah" yazdiralim
-        driver.switchTo().alert().sendKeys("Abdullah");
+        driver.switchTo().alert().sendKeys("Eda");
         Thread.sleep(3000);
         //            - OK tusuna basarak alert'i kapatalim.*****************************
         driver.switchTo().alert().accept();
         //            - Cikan sonuc yazisinin Abdullah icerdigini test edelim
         Thread.sleep(3000);
 
-        String expectedIcerik= "Abdullah";
+        String expectedIcerik= "Eda";
         String actualSonucYazisi=driver.findElement(By.xpath("//*[@id='result']")).getText();
 
         Assert.assertTrue(actualSonucYazisi.contains(expectedIcerik));

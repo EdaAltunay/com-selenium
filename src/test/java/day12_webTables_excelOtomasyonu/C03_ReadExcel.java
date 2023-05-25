@@ -11,8 +11,10 @@ public class C03_ReadExcel {
     @Test
     public void test01() throws IOException {
         // bilgisayarimizda olan bir dosyaya erisebilmek icin FileInputStream Class'indan obje olusturalim
+
         String dosyaYolu = System.getProperty("user.dir")+ "/src/test/java/day12_webTables_excelOtomasyonu/ulkeler.xlsx";
                               // projemize kadar olan kismi veriyor.
+
         FileInputStream fis = new FileInputStream(dosyaYolu);
 
         // projemize ekledigimiz POI kutuphanelerini kullanarak
@@ -22,6 +24,7 @@ public class C03_ReadExcel {
         Workbook workbook = WorkbookFactory.create(fis);
 
         Sheet sheet = workbook.getSheet("Sayfa1");
+
         Row row = sheet.getRow(1); // index 0'dan basliyor
         Cell cell = row.getCell(3); // index 0'dan basliyor
         System.out.println(cell);

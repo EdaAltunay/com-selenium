@@ -20,9 +20,11 @@ public class C03_FakerClass extends TestBase {
     public void test01() throws InterruptedException {
         //1- https://www.facebook.com adresine gidelim ve cookies'i kabul edelim
         driver.get("https://www.facebook.com");
-        driver.findElement(By.xpath("//button[@*='_42ft _4jy0 _al65 _4jy3 _4jy1 selected _51sy']")).click();
+       // driver.findElement(By.xpath("//button[@*='_42ft _4jy0 _al65 _4jy3 _4jy1 selected _51sy']")).click();
+
         //2- Yeni hesap olustur butonuna basalim
         driver.findElement(By.xpath("//a[@* = '_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")).click();
+
         //3- Ad, soyad, mail ve sifre kutularina deger yazalim ve kaydol tusuna basalim
         Actions actions = new Actions(driver);
         WebElement isimKutusu = driver.findElement(By.xpath("//*[@name='firstname']"));

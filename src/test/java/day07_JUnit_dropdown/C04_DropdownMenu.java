@@ -38,6 +38,7 @@ public class C04_DropdownMenu {
 
     @AfterClass
     public static void teardown(){
+
         driver.close();
     }
 
@@ -48,9 +49,12 @@ public class C04_DropdownMenu {
         // obje ile ilgili method'lari kullanmaliyiz
 
         WebElement dropdownMenuElementi= driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
+
         Select select = new Select(dropdownMenuElementi);
+
         int expectedOptionSayisi=45;
         int actualOptionSayisi= select.getOptions().size();
+        // select.getOptiouns() bize opsiyonlarin bir list'ini verir.
 
         Assert.assertEquals(expectedOptionSayisi,actualOptionSayisi);
     }
@@ -60,16 +64,18 @@ public class C04_DropdownMenu {
         WebElement dropdownMenuElementi= driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
         Select select = new Select(dropdownMenuElementi);
         //	1. Kategori menusunden Books secenegini  secin
+
         select.selectByVisibleText("Books");
 
         //	2. Arama kutusuna Java yazin ve aratin
         WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Java" + Keys.ENTER);
+
         //	3. Bulunan sonuc sayisini yazdirin
         WebElement sonucSayiElementi= driver.findElement(By.xpath("(//div[@class='sg-col-inner'])[1]"));
         System.out.println(sonucSayiElementi.getText());
-        //	4. Sonucun Java kelimesini icerdigini test edin
 
+        //	4. Sonucun Java kelimesini icerdigini test edin
         String expectedIcerik="Java";
         String actualSonucYazisi= sonucSayiElementi.getText();
         Assert.assertTrue(actualSonucYazisi.contains(expectedIcerik));

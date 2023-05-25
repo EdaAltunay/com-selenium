@@ -30,6 +30,7 @@ public class C05_DropdownMenu {
 
     @After
     public void teardown(){
+
         driver.close();
     }
 
@@ -37,19 +38,21 @@ public class C05_DropdownMenu {
     public void dropdownTest() throws InterruptedException {
         //● https://the-internet.herokuapp.com/dropdown adresine gidin.
         driver.get("https://the-internet.herokuapp.com/dropdown");
+
         //	1.Index kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
         WebElement dropdownMenuElementi= driver.findElement(By.xpath("//*[@id='dropdown']"));
         Select select= new Select(dropdownMenuElementi);
         select.selectByIndex(1);
-
         System.out.println(select.getFirstSelectedOption().getText());
-        //	2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
 
+        //	2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
         select.selectByValue("2");
         System.out.println(select.getFirstSelectedOption().getText());
+
         //	3.Visible Text(Görünen metin) kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
         select.selectByVisibleText("Option 1");
         System.out.println(select.getFirstSelectedOption().getText());
+
         //	4.Tüm dropdown değerleri(value) yazdırın
         List<WebElement> optionsList = select.getOptions();
 

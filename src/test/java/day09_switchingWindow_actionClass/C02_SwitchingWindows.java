@@ -24,6 +24,7 @@ public class C02_SwitchingWindows extends TestBase {
     public void test01() throws InterruptedException {
         //● https://the-internet.herokuapp.com/windows adresine gidin.
         driver.get("https://the-internet.herokuapp.com/windows");
+
         //● Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
         WebElement openingWindowYaziElementi= driver.findElement(By.tagName("h3"));
         String expectedYazi="Opening a new window";
@@ -40,8 +41,8 @@ public class C02_SwitchingWindows extends TestBase {
         //● Click Here butonuna basın.
         driver.findElement(By.xpath("//*[text() = 'Click Here']")).click();
 
-        // 43.satir itibariyle yeni window acildi
-        // artik 2 window var
+        // 43.satir itibariyle yeni window acildi  artik 2 window var.
+
         Set<String> whDegerleriSet = driver.getWindowHandles();
 
         String ikinciWindowWHD= "";
@@ -55,23 +56,19 @@ public class C02_SwitchingWindows extends TestBase {
 
         // Artik acilan 2.window'un windowHandleDegerine sahibiz
         //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
-
         driver.switchTo().window(ikinciWindowWHD);
         expectedTitle= "New Window";
         actualTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
 
         //● Sayfadaki textin “New Window” olduğunu doğrulayın.
-
         WebElement newWindowyaziElementi= driver.findElement(By.tagName("h3"));
         expectedYazi = "New Window";
         actualYazi = newWindowyaziElementi.getText();
-
         Assert.assertEquals(expectedYazi,actualYazi);
 
         //● Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu doğrulayın.
         driver.switchTo().window(ilkSayfaWHD);
-
         expectedTitle = "The Internet";
         actualTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle,actualTitle);
